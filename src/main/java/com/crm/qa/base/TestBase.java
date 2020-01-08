@@ -26,8 +26,7 @@ public class TestBase {
 	public TestBase(){
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/crm"
-					+ "/qa/config/config.properties");
+			FileInputStream ip = new FileInputStream("C:/Users/welcome/Desktop/Qedge/src/main/java/com/crm/qa/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -36,12 +35,12 @@ public class TestBase {
 		}
 	}
 	
-	
+	//"D:/chromedriver.exe"
 	public static void initialization(){
 		String browserName = prop.getProperty("browser");
 		
 		if(browserName.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/chromedriver");	
+			System.setProperty("webdriver.chrome.driver", "D:/chromedriver.exe");	
 			driver = new ChromeDriver(); 
 		}
 		else if(browserName.equals("FF")){
